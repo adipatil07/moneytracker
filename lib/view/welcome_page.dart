@@ -24,7 +24,7 @@ class WelcomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 30,),
+                  const SizedBox(height: 100,),
                   const Text(
                     'MoneyTracker',
                     style: TextStyle(
@@ -45,7 +45,8 @@ class WelcomePage extends StatelessWidget {
                   Expanded(
                     child: Image.asset(
                       'assets/images/welcome.png', // Replace with your asset
-                      height: 100,
+                      // height: 100,
+                      width: 200,
                     ),
                   ),
                   const SizedBox(height: 20),
