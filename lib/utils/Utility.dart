@@ -65,7 +65,50 @@ class Utility {
     );
   }
 
-  // Widget barChart(BuildContext context){
+  // void showFlashError(BuildContext context, String message) {
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //
+  //       content: Text(message),
+  //     ),
+  //   );
+  // }
+
+  void showFlashError(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+
+        content: SizedBox(
+          child: Row(
+            children: [
+              const Icon(Icons.error, color: Colors.white),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  message,
+                  style: const TextStyle(color: Colors.white),
+                  overflow: TextOverflow.visible,
+                ),
+              ),
+            ],
+          ),
+        ),
+        // backgroundColor: Colors,
+        duration: const Duration(seconds: 3),
+        action: SnackBarAction(
+          label: 'Dismiss',
+          textColor: Colors.white,
+          // backgroundColor: Colors.black,
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
+    );
+  }
+
+
+    // Widget barChart(BuildContext context){
   //   return Container(
   //     height: 250,
   //     padding: const EdgeInsets.all(16),
